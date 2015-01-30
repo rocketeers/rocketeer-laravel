@@ -37,7 +37,9 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function registerConsoleCommand(Command $command)
     {
-        $this->app['artisan']->add($command);
+        if ($this->app->bound('artisan')) {
+            $this->app['artisan']->add($command);
+        }
     }
 
     /**
@@ -47,7 +49,7 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function getConfigurationPath()
     {
-        return $this->app['path'].'/config/packages/anahkiasen/rocketeer';
+        return $this->getApplicationPath().'/config/packages/anahkiasen/rocketeer';
     }
 
     /**
@@ -59,7 +61,7 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function getPluginConfigurationPath($plugin)
     {
-        $path        = $this->app['path'].'/config/packages/'.$plugin;
+        $path        = $this->getApplicationPath().'/config/packages/'.$plugin;
         $destination = preg_replace('/packages\/([^\/]+)/', 'packages/rocketeers', $path);
 
         return $destination;
@@ -81,5 +83,14 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
         }
 
         return $command;
+    }
+
+    //////////////////////////////////////////////////////////////////////
+    ////////////////////////////// HELPERS ///////////////////////////////
+    //////////////////////////////////////////////////////////////////////
+
+    protected function getApplicationPath()
+    {
+        return $this->app->bound('path') ? $this->app['path'] : $this->paths->getUserHomeFolder().'/app';
     }
 }
