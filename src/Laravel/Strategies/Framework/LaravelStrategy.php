@@ -19,6 +19,17 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
     }
 
     /**
+     * Whether Rocketeer is used as a dependency of
+     * this application or globally
+     *
+     * @return boolean
+     */
+    public function isInsideApplication()
+    {
+        return $this->app->bound('artisan');
+    }
+
+    /**
      * Clear the application's cache
      *
      * @return void
