@@ -1,9 +1,10 @@
 {
-  "name": "rocketeers/rocketeer-plugin",
-  "description": "The description of the plugin",
+  "name": "rocketeers/rocketeer-laravel",
+  "description": "Laravel integration for Rocketeer",
   "license": "MIT",
   "keywords": [
-    "rocketeer"
+    "rocketeer",
+    "laravel"
   ],
   "authors": [
     {
