@@ -18,7 +18,7 @@
   "require-dev": {
     "phpunit/phpunit": "~4.4",
     "mockery/mockery": "0.9.*",
-    "anahkiasen/rocketeer": "3.0.*@dev"
+    "anahkiasen/rocketeer": "dev-feature/laravel-decoupling"
   },
   "autoload": {
     "psr-4": {
