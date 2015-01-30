@@ -1,6 +1,7 @@
 <?php
 namespace Rocketeer\Plugins\Laravel;
 
+use Illuminate\Container\Container;
 use Rocketeer\Abstracts\AbstractPlugin;
 
 class LaravelPlugin extends AbstractPlugin
@@ -19,4 +20,16 @@ class LaravelPlugin extends AbstractPlugin
             'Rocketeer\Plugins\Laravel\Strategies\%sStrategy',
         ),
     );
+
+    /**
+     * @param Container $app
+     *
+     * @return Container
+     */
+    public function register(Container $app)
+    {
+        $app->singleton('rocketeer.strategies.framework', 'Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy');
+
+        return $app;
+    }
 }
