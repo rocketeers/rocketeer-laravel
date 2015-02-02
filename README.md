@@ -7,9 +7,6 @@
 [![Total Downloads](http://img.shields.io/packagist/dt/anahkiasen/rocketeer-laravel.svg?style=flat-square)](https://packagist.org/rocketeer-laravels/anahkiasen/rocketeer-laravel)
 [![Support via Gittip](http://img.shields.io/gittip/Anahkiasen.svg?style=flat-square)](https://www.gittip.com/Anahkiasen/)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
 ## Install
 
 Via Composer
