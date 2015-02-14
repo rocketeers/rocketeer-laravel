@@ -88,7 +88,7 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function processCommand($command) {
         // Add environment flag to commands
-        $stage = $this->connections->getStage();
+        $stage = $this->connections->getCurrentConnection()->stage;
         if (Str::contains($command, 'artisan') && $stage) {
             $command .= ' --env="'.$stage.'"';
         }
