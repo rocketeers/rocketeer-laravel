@@ -2,8 +2,8 @@
 namespace Rocketeer\Plugins\Laravel\Strategies\Framework;
 
 use Illuminate\Support\Str;
-use Rocketeer\Abstracts\Strategies\AbstractStrategy;
 use Rocketeer\Interfaces\Strategies\FrameworkStrategyInterface;
+use Rocketeer\Strategies\AbstractStrategy;
 use Symfony\Component\Console\Command\Command;
 
 class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInterface

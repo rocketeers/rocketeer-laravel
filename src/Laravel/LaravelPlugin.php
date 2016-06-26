@@ -2,7 +2,7 @@
 namespace Rocketeer\Plugins\Laravel;
 
 use Illuminate\Contracts\Container\Container;
-use Rocketeer\Abstracts\AbstractPlugin;
+use Rocketeer\Plugins\AbstractPlugin;
 
 class LaravelPlugin extends AbstractPlugin
 {

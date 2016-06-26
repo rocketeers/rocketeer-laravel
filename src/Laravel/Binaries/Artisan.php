@@ -2,7 +2,7 @@
 namespace Rocketeer\Plugins\Laravel\Binaries;
 
 use Illuminate\Container\Container;
-use Rocketeer\Abstracts\AbstractBinary;
+use Rocketeer\Binaries\AbstractBinary;
 use Rocketeer\Binaries\Php;
 
 class Artisan extends AbstractBinary
