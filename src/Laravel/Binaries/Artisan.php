@@ -1,7 +1,7 @@
 <?php
 namespace Rocketeer\Plugins\Laravel\Binaries;
 
-use Illuminate\Container\Container;
+use Rocketeer\Container;
 use Rocketeer\Binaries\AbstractBinary;
 use Rocketeer\Binaries\Php;
 

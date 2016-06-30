@@ -1,7 +1,8 @@
 <?php
 namespace Rocketeer\Plugins\Laravel;
 
-use Illuminate\Contracts\Container\Container;
+use League\Container\ContainerInterface;
+use Rocketeer\Container;
 use Rocketeer\Plugins\AbstractPlugin;
 
 class LaravelPlugin extends AbstractPlugin
@@ -12,14 +13,14 @@ class LaravelPlugin extends AbstractPlugin
      *
      * @type array
      */
-    protected $lookups = array(
-        'binaries'   => array(
+    protected $lookups = [
+        'binaries' => [
             'Rocketeer\Plugins\Laravel\Binaries\%s',
-        ),
-        'strategies' => array(
+        ],
+        'strategies' => [
             'Rocketeer\Plugins\Laravel\Strategies\%sStrategy',
-        ),
-    );
+        ],
+    ];
 
     /**
      * @param Container $app
@@ -28,7 +29,9 @@ class LaravelPlugin extends AbstractPlugin
      */
     public function register(Container $app)
     {
-        $app->singleton('rocketeer.strategies.framework', 'Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy');
+        $app->share('rocketeer.strategies.framework', function () use ($app) {
+            return $app->get(\Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy::class);
+        });
 
         return $app;
     }

@@ -26,7 +26,7 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function isInsideApplication()
     {
-        return $this->app->bound('artisan');
+        return $this->app->has('artisan');
     }
 
     /**
@@ -48,8 +48,8 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function registerConsoleCommand(Command $command)
     {
-        if ($this->app->bound('artisan')) {
-            $this->app['artisan']->add($command);
+        if ($this->app->has('artisan')) {
+            $this->app->get('artisan')->add($command);
         }
     }
 
@@ -102,6 +102,6 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
 
     protected function getApplicationPath()
     {
-        return $this->app->bound('path') ? $this->app['path'] : $this->paths->getUserHomeFolder().'/app';
+        return $this->app->has('path') ? $this->app->get('path') : $this->paths->getUserHomeFolder().'/app';
     }
 }
