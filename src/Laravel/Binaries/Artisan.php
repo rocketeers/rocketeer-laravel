@@ -10,12 +10,12 @@ class Artisan extends AbstractBinary
     /**
      * @param Container $app
      */
-    public function __construct(Container $app)
+    public function __construct(Container $container)
     {
-        parent::__construct($app);
+        parent::__construct($container);
 
         // Set PHP as parent
-        $php = new Php($this->app);
+        $php = new Php($this->container);
         $this->setParent($php);
     }
 

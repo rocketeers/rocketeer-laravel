@@ -4,6 +4,7 @@ namespace Rocketeer\Plugins\Laravel;
 use League\Container\ContainerInterface;
 use Rocketeer\Container;
 use Rocketeer\Plugins\AbstractPlugin;
+use Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy;
 
 class LaravelPlugin extends AbstractPlugin
 {
@@ -27,12 +28,12 @@ class LaravelPlugin extends AbstractPlugin
      *
      * @return Container
      */
-    public function register(Container $app)
+    public function register(Container $container)
     {
-        $app->share('rocketeer.strategies.framework', function () use ($app) {
-            return $app->get(\Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy::class);
+        $container->share('rocketeer.strategies.framework', function () use ($container) {
+            return $container->get(LaravelStrategy::class);
         });
 
-        return $app;
+        return $container;
     }
 }
