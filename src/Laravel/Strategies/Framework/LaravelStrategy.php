@@ -40,20 +40,6 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
     }
 
     /**
-     * Register a command with the application's CLI
-     *
-     * @param Command $command
-     *
-     * @return void
-     */
-    public function registerConsoleCommand(Command $command)
-    {
-        if ($this->container->has('artisan')) {
-            $this->container->get('artisan')->add($command);
-        }
-    }
-
-    /**
      * Get the path to export the configuration to
      *
      * @return string
