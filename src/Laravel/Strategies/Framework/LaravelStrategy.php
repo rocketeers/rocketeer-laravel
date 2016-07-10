@@ -2,9 +2,8 @@
 namespace Rocketeer\Plugins\Laravel\Strategies\Framework;
 
 use Illuminate\Support\Str;
-use Rocketeer\Interfaces\Strategies\FrameworkStrategyInterface;
 use Rocketeer\Strategies\AbstractStrategy;
-use Symfony\Component\Console\Command\Command;
+use Rocketeer\Strategies\Framework\FrameworkStrategyInterface;
 
 class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInterface
 {
@@ -47,7 +46,7 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      */
     public function getPluginConfigurationPath($plugin)
     {
-        $path        = $this->getApplicationPath().'/config/packages/'.$plugin;
+        $path = $this->getApplicationPath().'/config/packages/'.$plugin;
         $destination = preg_replace('/packages\/([^\/]+)/', 'packages/rocketeers', $path);
 
         return $destination;
@@ -61,7 +60,8 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
      *
      * @return string
      */
-    public function processCommand($command) {
+    public function processCommand($command)
+    {
         // Add environment flag to commands
         $stage = $this->connections->getCurrentConnectionKey()->stage;
         if (Str::contains($command, 'artisan') && $stage) {

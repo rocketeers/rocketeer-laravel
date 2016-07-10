@@ -7,7 +7,7 @@ class ArtisanTest extends LaravelTestCase
 {
     public function testCanRunMigrations()
     {
-        $php     = $this->binaries['php'];
+        $php = static::$binaries['php'];
         $artisan = $this->builder->buildBinary('artisan');
 
         $commands = $artisan->migrate();
@@ -16,7 +16,7 @@ class ArtisanTest extends LaravelTestCase
 
     public function testCanSeedDatabase()
     {
-        $php     = $this->binaries['php'];
+        $php = static::$binaries['php'];
         $artisan = $this->builder->buildBinary('artisan');
 
         $commands = $artisan->seed();

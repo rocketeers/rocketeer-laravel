@@ -1,22 +1,21 @@
 <?php
 namespace Rocketeer\Plugins\Laravel\Binaries;
 
-use Rocketeer\Container;
 use Rocketeer\Binaries\AbstractBinary;
 use Rocketeer\Binaries\Php;
+use Rocketeer\Container;
 
 class Artisan extends AbstractBinary
 {
     /**
-     * @param Container $app
+     * @param Container $container
      */
     public function __construct(Container $container)
     {
         parent::__construct($container);
 
         // Set PHP as parent
-        $php = new Php($this->container);
-        $this->setParent($php);
+        $this->setParent(new Php($this->container));
     }
 
     /**
@@ -26,10 +25,10 @@ class Artisan extends AbstractBinary
      */
     protected function getKnownPaths()
     {
-        return array(
+        return [
             'artisan',
             $this->releasesManager->getCurrentReleasePath().'/artisan',
-        );
+        ];
     }
 
     /**

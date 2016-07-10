@@ -12,12 +12,12 @@ class ArtisanStrategyTest extends LaravelTestCase
         $strategy = $this->builder->buildStrategy('Migrate', 'Artisan');
         $strategy->migrate();
 
-        $this->assertHistory(array(
-            array(
+        $this->assertHistory([
+            [
                 'cd {server}/releases/{release}',
                 '{php} artisan migrate --force',
-            )
-        ));
+            ],
+        ]);
     }
 
     public function testCanRunSeeds()
@@ -27,11 +27,11 @@ class ArtisanStrategyTest extends LaravelTestCase
         $strategy = $this->builder->buildStrategy('Migrate', 'Artisan');
         $strategy->seed();
 
-        $this->assertHistory(array(
-            array(
+        $this->assertHistory([
+            [
                 'cd {server}/releases/{release}',
                 '{php} artisan db:seed --force',
-            )
-        ));
+            ],
+        ]);
     }
 }

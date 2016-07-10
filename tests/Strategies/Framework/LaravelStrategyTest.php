@@ -31,12 +31,12 @@ class LaravelStrategyTest extends RocketeerTestCase
 
         $this->framework->clearCache();
 
-        $this->assertHistory(array(
-            array(
+        $this->assertHistory([
+            [
                 'cd {server}/releases/{release}',
-                '{php} artisan cache:clear'
-            ),
-        ));
+                '{php} artisan cache:clear',
+            ],
+        ]);
     }
 
     public function testCanGetPluginConfigurationPath()

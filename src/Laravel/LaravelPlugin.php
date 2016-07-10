@@ -1,7 +1,6 @@
 <?php
 namespace Rocketeer\Plugins\Laravel;
 
-use League\Container\ContainerInterface;
 use Rocketeer\Container;
 use Rocketeer\Plugins\AbstractPlugin;
 use Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy;
@@ -24,7 +23,7 @@ class LaravelPlugin extends AbstractPlugin
     ];
 
     /**
-     * @param Container $app
+     * @param Container $container
      *
      * @return Container
      */
