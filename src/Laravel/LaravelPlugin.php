@@ -23,16 +23,12 @@ class LaravelPlugin extends AbstractPlugin
     ];
 
     /**
-     * @param Container $container
-     *
-     * @return Container
+     * {@inheritdoc}
      */
-    public function register(Container $container)
+    public function register()
     {
-        $container->share('rocketeer.strategies.framework', function () use ($container) {
-            return $container->get(LaravelStrategy::class);
+        $this->container->share('rocketeer.strategies.framework', function () {
+            return $this->container->get(LaravelStrategy::class);
         });
-
-        return $container;
     }
 }
