@@ -38,21 +38,6 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
     }
 
     /**
-     * Get the path to export the plugins configurations to
-     *
-     * @param string $plugin
-     *
-     * @return string
-     */
-    public function getPluginConfigurationPath($plugin)
-    {
-        $path = $this->getApplicationPath().'/config/packages/'.$plugin;
-        $destination = preg_replace('/packages\/([^\/]+)/', 'packages/rocketeers', $path);
-
-        return $destination;
-    }
-
-    /**
      * Apply modifiers to some commands before
      * they're executed
      *
@@ -75,8 +60,11 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
     ////////////////////////////// HELPERS ///////////////////////////////
     //////////////////////////////////////////////////////////////////////
 
+    /**
+     * @return string
+     */
     protected function getApplicationPath()
     {
-        return $this->container->has('path') ? $this->container->get('path') : $this->paths->getUserHomeFolder().'/app';
+        return $this->paths->getUserHomeFolder().'/app';
     }
 }
