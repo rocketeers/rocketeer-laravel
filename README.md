@@ -1,18 +1,18 @@
 # Rocketeer Laravel integration
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rocketeers/rocketeer-laravel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+## Installation
 
-[![Build Status](http://img.shields.io/travis/rocketeers/rocketeer-laravel.svg?style=flat-square)](https://travis-ci.org/rocketeers/rocketeer-laravel)
-[![Latest Stable Version](http://img.shields.io/packagist/v/anahkiasen/rocketeer-laravel.svg?style=flat-square)](https://packagist.org/rocketeer-laravels/anahkiasen/rocketeer-laravel)
-[![Total Downloads](http://img.shields.io/packagist/dt/anahkiasen/rocketeer-laravel.svg?style=flat-square)](https://packagist.org/rocketeer-laravels/anahkiasen/rocketeer-laravel)
-[![Support via Gittip](http://img.shields.io/gittip/Anahkiasen.svg?style=flat-square)](https://www.gittip.com/Anahkiasen/)
-
-## Install
-
-Via Composer
-
-``` bash
+```shell
 $ rocketeer plugin:install rocketeers/rocketeer-laravel
+```
+
+Then add this to the `plugins.loaded` array in your configuration:
+
+```php
+<?php
+'loaded' => [
+    'Rocketeer\Plugins\Laravel\Laravel',
+],
 ```
 
 ## Usage
@@ -27,13 +27,3 @@ It also adds two strategies:
 
 - Check:Laravel: extends the PHP check strategy but adds a few checks related to your application
 - Migrate:Artisan: uses Artisan to migrate your database
-
-## Testing
-
-``` bash
-$ phpunit
-```
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
