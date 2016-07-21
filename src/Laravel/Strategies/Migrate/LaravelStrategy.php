@@ -1,10 +1,11 @@
 <?php
 namespace Rocketeer\Plugins\Laravel\Strategies\Migrate;
 
-use Rocketeer\Abstracts\Strategies\AbstractStrategy;
+
+use Rocketeer\Strategies\AbstractStrategy;
 use Rocketeer\Strategies\Migrate\MigrateStrategyInterface;
 
-class ArtisanStrategy extends AbstractStrategy implements MigrateStrategyInterface
+class LaravelStrategy extends AbstractStrategy  implements MigrateStrategyInterface
 {
     /**
      * @type string
