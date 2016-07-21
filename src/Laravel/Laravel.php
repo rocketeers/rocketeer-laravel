@@ -5,7 +5,7 @@ use Rocketeer\Container;
 use Rocketeer\Plugins\AbstractPlugin;
 use Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy;
 
-class LaravelPlugin extends AbstractPlugin
+class Laravel extends AbstractPlugin
 {
     /**
      * Additional lookups to

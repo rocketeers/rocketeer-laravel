@@ -8,16 +8,6 @@ use Rocketeer\Strategies\Framework\FrameworkStrategyInterface;
 class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInterface
 {
     /**
-     * Get the name of the framework
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'laravel';
-    }
-
-    /**
      * Clear the application's cache
      *
      * @return void
@@ -25,16 +15,6 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
     public function clearCache()
     {
         $this->artisan()->runForCurrentRelease('clearCache');
-    }
-
-    /**
-     * Get the path to export the configuration to
-     *
-     * @return string
-     */
-    public function getConfigurationPath()
-    {
-        return $this->getApplicationPath().'/config/packages/anahkiasen/rocketeer';
     }
 
     /**
@@ -54,17 +34,5 @@ class LaravelStrategy extends AbstractStrategy implements FrameworkStrategyInter
         }
 
         return $command;
-    }
-
-    //////////////////////////////////////////////////////////////////////
-    ////////////////////////////// HELPERS ///////////////////////////////
-    //////////////////////////////////////////////////////////////////////
-
-    /**
-     * @return string
-     */
-    protected function getApplicationPath()
-    {
-        return $this->paths->getUserHomeFolder().'/app';
     }
 }
