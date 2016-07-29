@@ -3,7 +3,7 @@ namespace Rocketeer\Plugins\Laravel\Binaries;
 
 use Rocketeer\Binaries\AbstractBinary;
 use Rocketeer\Binaries\Php;
-use Rocketeer\Container;
+use Rocketeer\Services\Container\Container;
 
 class Artisan extends AbstractBinary
 {

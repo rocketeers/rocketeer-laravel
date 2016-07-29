@@ -1,7 +1,7 @@
 <?php
 namespace Rocketeer\Plugins\Laravel;
 
-use Rocketeer\Container;
+use Rocketeer\Services\Container\Container;
 use Rocketeer\Plugins\AbstractPlugin;
 use Rocketeer\Plugins\Laravel\Strategies\Framework\LaravelStrategy;
 
