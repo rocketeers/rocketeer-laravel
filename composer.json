@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Rocketeer\\Plugins\\Laravel\\": "src/Laravel"
+      "Rocketeer\\Plugins\\Laravel\\": "src"
     }
   },
   "extra": {
