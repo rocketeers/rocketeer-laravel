@@ -13,8 +13,13 @@
     }
   ],
   "require": {
-    "php": ">=5.6.0",
+    "php": ">=5.6.0"
+  },
+  "require-dev": {
     "anahkiasen/rocketeer": "3.0.x@dev"
+  },
+  "conflict": {
+    "anahkiasen/rocketeer": "2.*"
   },
   "autoload": {
     "psr-4": {
